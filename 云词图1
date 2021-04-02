@@ -1,0 +1,12 @@
+from wordcloud import WordCloud
+import matplotlib.pyplot as plt
+from scipy.misc import imread
+from wordcloud.color_from_image import ImageColorGenerator
+text = open(r'C:\Users\Jackie\Desktop\工作簿1.txt','r',encoding='gbk').read()
+#bg_pic = imread('love.jpg')        #你需要处理的背景图片  
+
+plt.subplots(figsize=(16,9),dpi=300)
+wordcloud = WordCloud(background_color='white',font_path='simfang.ttf',max_words=300,max_font_size=40,scale=24).generate(text) #生成词云
+plt.imshow(wordcloud)  #展示词云
+plt.axis('off')    
+plt.show()
